@@ -4,8 +4,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 		<link rel="icon" type="image/png" href="images/icon.png">
-		<title>nut simulator</title>
-		<meta name="description" content="grow your nut empire">
+		<title>milk simulator</title>
+		<meta name="description" content="grow your milk empire">
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 		<!-- Google Analytics -->
 		<script>
@@ -19,14 +19,14 @@
 	<body>
 		<div id="container">
 			<main>
-				<div id="nutsim">
-					nut simulator v1.8
+				<div id="milksim">
+					milk simulator v1.8
 				</div>
 				<div id="time">
 					played for 0:00:00
 				</div>
 				<input type="file" name="file" id="customImage" style="position:absolute;right:20%;bottom:4%"/>
-				<label for="customImage" onmouseover="uploadHover()" onmouseleave="uploadLeave()" id="uploadLabel"><img src="images/upload.png" id="uploadIcon" style="transition: 0.5s;width:30px;height:30px;left:-2px;padding-right:10px;position:relative;top:2px"><span style="position:relative;top:4%">choose a custom nut image</span></label>
+				<label for="customImage" onmouseover="uploadHover()" onmouseleave="uploadLeave()" id="uploadLabel"><img src="images/upload.png" id="uploadIcon" style="transition: 0.5s;width:30px;height:30px;left:-2px;padding-right:10px;position:relative;top:2px"><span style="position:relative;top:4%">choose a custom milk image</span></label>
 				<div id="xptonextlevel">
 					<span style="position:relative;top:10%">xp to next level: <span id="xptonextlevelnumber">20</span></span>
 				</div>
@@ -34,7 +34,7 @@
 					<span style="position:relative;top:3%">level: <span id="levelnumber">0</span></span>
 				</div>
 				<div id="bonusdamage">
-					<span style="position:relative;top:3%"><span id="multipliernumber">1x</span> bonus <br>nuts/sec</span>
+					<span style="position:relative;top:3%"><span id="multipliernumber">1x</span> bonus <br>milks/sec</span>
 				</div>
 				<div id="bgbar"></div>
 				<div id="bar" style="text-align:center;overflow-x:visible;white-space:nowrap;transition:0.2s"><span style="position:relative;top:-0.2vw;margin-left:0.5vw">current xp: <span id="xp">0</span></span></div>
@@ -42,41 +42,41 @@
 				<div class="textContainer">
 					<div class="item1">
 						<div id="things" style="font-size:2.5vw;font-weight:bold;position: relative;bottom: 8px;display:none">things</div>
-						<div class="buyNutKid" style="display:none">Nut Kids: <span id="nutKids">0</span> - <span id="nutKidTotalDmg">1</span> n/s</div>
+						<div class="buymilkKid" style="display:none">milk Kids: <span id="milkKids">0</span> - <span id="milkKidTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutBoy" style="display:none">Nut Boys: <span id="nutBoys">0</span> - <span id="nutBoyTotalDmg">1</span> n/s</div>
+						<div class="buymilkBoy" style="display:none">milk Boys: <span id="milkBoys">0</span> - <span id="milkBoyTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutMan" style="display:none">Nut Men: <span id="nutMen">0</span> - <span id="nutManTotalDmg">1</span> n/s</div>
+						<div class="buymilkMan" style="display:none">milk Men: <span id="milkMen">0</span> - <span id="milkManTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutFarm" style="display:none">Nut Farms: <span id="nutFarms">0</span> - <span id="nutFarmTotalDmg">1</span> n/s</div>
+						<div class="buymilkFarm" style="display:none">milk Farms: <span id="milkFarms">0</span> - <span id="milkFarmTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutFactory" style="display:none">Nut Factories: <span id="nutFactories">0</span> - <span id="nutFactoryTotalDmg">1</span> n/s</div>
+						<div class="buymilkFactory" style="display:none">milk Factories: <span id="milkFactories">0</span> - <span id="milkFactoryTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutBank" style="display:none">Nut Banks: <span id="nutBanks">0</span> - <span id="nutBankTotalDmg">1</span> n/s</div>
+						<div class="buymilkBank" style="display:none">milk Banks: <span id="milkBanks">0</span> - <span id="milkBankTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutEmpire" style="display:none">Nut Empires: <span id="nutEmpires">0</span> - <span id="nutEmpireTotalDmg">1</span> n/s</div>
+						<div class="buymilkEmpire" style="display:none">milk Empires: <span id="milkEmpires">0</span> - <span id="milkEmpireTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutWorldControl" style="display:none">Nut World Control: <span id="nutWorldControls">0</span> - <span id="nutWorldControlTotalDmg">1</span> n/s</div>
+						<div class="buymilkWorldControl" style="display:none">milk World Control: <span id="milkWorldControls">0</span> - <span id="milkWorldControlTotalDmg">1</span> n/s</div>
 
-						<div class="buyNutGalacticReign" style="display:none">Galactic Nut Reigns: <span id="nutGalacticReigns">0</span> - <span id="nutGalacticReignTotalDmg">1</span> n/s</div>
+						<div class="buymilkGalacticReign" style="display:none">Galactic milk Reigns: <span id="milkGalacticReigns">0</span> - <span id="milkGalacticReignTotalDmg">1</span> n/s</div>
 
-						<div class="buyDeezNutGuy" style="display:none">Deez Nut Guys: <span id="deezNutGuys">0</span> - <span id="deezNutGuyTotalDmg">1</span> n/s</div>
+						<div class="buyDeezmilkGuy" style="display:none">Deez milk Guys: <span id="deezmilkGuys">0</span> - <span id="deezmilkGuyTotalDmg">1</span> n/s</div>
 						
-						<div class="buyNutTimeTravel" style="display:none">Time Travelling Nuts: <span id="nutTimeTravels">0</span> - <span id="nutTimeTravelTotalDmg">1</span> n/s</div>
+						<div class="buymilkTimeTravel" style="display:none">Time Travelling milks: <span id="milkTimeTravels">0</span> - <span id="milkTimeTravelTotalDmg">1</span> n/s</div>
 						
-						<div class="buyNutUniversalDomination" style="display:none">Universal Nut Dominations: <span id="nutUniversalDominations">0</span> - <span id="nutUniversalDominationTotalDmg">1</span> n/s</div>
+						<div class="buymilkUniversalDomination" style="display:none">Universal milk Dominations: <span id="milkUniversalDominations">0</span> - <span id="milkUniversalDominationTotalDmg">1</span> n/s</div>
 						
-						<div class="buyNutGod" style="display:none">Nut Gods: <span id="nutGods">0</span> - <span id="nutGodTotalDmg">1</span> n/s</div>
+						<div class="buymilkGod" style="display:none">milk Gods: <span id="milkGods">0</span> - <span id="milkGodTotalDmg">1</span> n/s</div>
 						
-						<div class="buyNutAfterlife" style="display:none">Nut Afterlives: <span id="nutAfterlives">0</span> - <span id="nutAfterlifeTotalDmg">1</span> n/s</div>
+						<div class="buymilkAfterlife" style="display:none">milk Afterlives: <span id="milkAfterlives">0</span> - <span id="milkAfterlifeTotalDmg">1</span> n/s</div>
 						<div style="display:none">
-						<div class="buyNutBoyBonus" style="display:none">Bigger Nuts: <span id="nutBoyBonuses">0</span></div>
+						<div class="buymilkBoyBonus" style="display:none">Bigger milks: <span id="milkBoyBonuses">0</span></div>
 						
 						<div class="buyClick" style="display:none">Powerful Clicks: <span id="clickUpgrades">0</span> - <span id="clickUpgradeDamage">1</span> click bonus</div>
 
 						<div class="buyClick2" style="display:none">Big Boy Clicks: <span id="clickUpgrades2">0</span> - <span id="clickUpgrade2Damage">1</span> click bonus</div>
 
-						<div class="buyAllUpgrade" style="display:none">Nut Masteries: <span id="allUpgrades">0</span></div>
+						<div class="buyAllUpgrade" style="display:none">milk Masteries: <span id="allUpgrades">0</span></div>
 						
 						<div class="buyClick3" style="display:none">Nuclear Clicks: <span id="clickUpgrades3">0</span> - <span id="clickUpgrade3Damage">1</span> click bonus</div>
 						</div>
@@ -84,49 +84,49 @@
 
 					<div class="item2">
 						<div id="upgrades" style="font-size:2.5vw;font-weight:bold;position: relative;bottom: 8px;display:none">upgrades</div>
-						<span id="damage" style="display:none">total nuts/sec: <span id="totalDamage">0</span></span>
+						<span id="damage" style="display:none">total milks/sec: <span id="totalDamage">0</span></span>
 						<br>
-						<span id="clickBonusText" style="display:none">nuts/click: <span id="clickDamage">1</span></span>
+						<span id="clickBonusText" style="display:none">milks/click: <span id="clickDamage">1</span></span>
 						<br>
 						<hr size="1" noshade color=black id="line2" style="display:none">
-						<button onclick="buy('buyNutBoyBonus')" id="button" class="buyNutBoyBonus" style="display:none;font-size:0.8vw"><b>Bigger Nuts</b><br>nut boy nuts/sec x <span id="nutBoyBonusAmount">2</span><br>- <span id="nutBoyBonusCost">100</span> nuts</button>
+						<button onclick="buy('buymilkBoyBonus')" id="button" class="buymilkBoyBonus" style="display:none;font-size:0.8vw"><b>Bigger milks</b><br>milk boy milks/sec x <span id="milkBoyBonusAmount">2</span><br>- <span id="milkBoyBonusCost">100</span> milks</button>
 						<br>
-						<button onclick="buy('x2Click')" class="buyClick" style="display:none;background-color: #F5AB35;font-size:0.8vw"><b>Powerful Clicking</b><br>click bonus + 15<br>- <span id="clickCost">300</span> nuts</button>
+						<button onclick="buy('x2Click')" class="buyClick" style="display:none;background-color: #F5AB35;font-size:0.8vw"><b>Powerful Clicking</b><br>click bonus + 15<br>- <span id="clickCost">300</span> milks</button>
 						<br>
-						<button onclick="buy('clickUpgrade2')" class="buyClick2" style="display:none;background-color: #87D37C;font-size:0.8vw"><b>Big Boy Clicks</b><br>click bonus + 50<br>- <span id="clickCost2">5000</span> nuts</button>
+						<button onclick="buy('clickUpgrade2')" class="buyClick2" style="display:none;background-color: #87D37C;font-size:0.8vw"><b>Big Boy Clicks</b><br>click bonus + 50<br>- <span id="clickCost2">5000</span> milks</button>
 						<br>
-						<button onclick="buy('allUpgrade')" class="buyAllUpgrade" style="display:none;background-color: #26A65B;font-size:0.8vw"><b>Nut Mastery</b><br>all except click x 2<br>- <span id="allUpgradeCost">100000</span> nuts</button>
+						<button onclick="buy('allUpgrade')" class="buyAllUpgrade" style="display:none;background-color: #26A65B;font-size:0.8vw"><b>milk Mastery</b><br>all except click x 2<br>- <span id="allUpgradeCost">100000</span> milks</button>
 						<br>
-						<button onclick="buy('clickUpgrade3')" class="buyClick3" style="display:none;background-color: #03C9A9;font-size:0.8vw"><b>Nuclear Clicks</b><br>click bonus x 2<br>- <span id="clickCost3">300000</span> nuts</button>
+						<button onclick="buy('clickUpgrade3')" class="buyClick3" style="display:none;background-color: #03C9A9;font-size:0.8vw"><b>Nuclear Clicks</b><br>click bonus x 2<br>- <span id="clickCost3">300000</span> milks</button>
 					</div>
 				</div>
 
-				<!--the big nut-->
+				<!--the big milk-->
 				<div onmousedown="return false"><!--disable dragging-->
-				<img src="images/icon.png" onmousedown="clickAnimation();clickOnButton()" onmouseup="releaseAnimation();pressed=false" onmouseleave="releaseAnimation();pressed=false" id="middleNut">
-					<div id="middleNutContent">
-						<div id="middleNutCounter">Nuts: <span id="nuts">0</span> <span style="position:relative;bottom:5px;align:left;font-size:1vw" id="damageAdded">+ 0/sec</span></div>
+				<img src="images/icon.png" onmousedown="clickAnimation();clickOnButton()" onmouseup="releaseAnimation();pressed=false" onmouseleave="releaseAnimation();pressed=false" id="middlemilk">
+					<div id="middlemilkContent">
+						<div id="middlemilkCounter">milks: <span id="milks">0</span> <span style="position:relative;bottom:5px;align:left;font-size:1vw" id="damageAdded">+ 0/sec</span></div>
 						<div id="amountAdded"></div>
-						<div id="addedNuts">addedNuts</div>
+						<div id="addedmilks">addedmilks</div>
 					</div>
 				</div>
 
 				<div id="middle">
-					<!--<button onclick="clickOnButton()" class="clickButton" id="middleNut">click</button>-->
-					<button onclick="buy('nutKid')" class="buyNutKid" style="display:none;background-color: #EB9532"><b>Nut Kid</b><br>(+<span id="nutKidDamage">0.1</span> nuts/sec)<br>- <span id="nutKidCost">15</span> nuts</button>
-					<button onclick="buy('nutBoy')" class="buyNutBoy" style="display:none;background-color: #F39C12"><b>Nut Boy</b><br>(+<span id="nutBoyBonusTotal">1</span> nuts/sec)<br>- <span id="nutBoyCost">50</span> nuts</button>
-					<button onclick="buy('nutMan')" class="buyNutMan" style="display:none;background-color: #87D37C"><b>Nut Man</b><br>(+<span id="nutManDamage"> </span> nuts/sec)<br>- <span id="nutManCost">1000</span> nuts</button>
-					<button onclick="buy('nutFarm')" class="buyNutFarm" style="display:none;background-color: #26A65B"><b>Nut Farm</b><br>(+<span id="nutFarmDamage"> </span> nuts/sec)<br>- <span id="nutFarmCost">13000</span> nuts</button>
-					<button onclick="buy('nutFactory')" class="buyNutFactory" style="display:none;background-color: #03C9A9"><b>Nut Factory</b><br>(+<span id="nutFactoryDamage"> </span> nuts/sec)<br>- <span id="nutFactoryCost">150000</span> nuts</button>
-					<button onclick="buy('nutBank')" class="buyNutBank" style="display:none;background-color: #5C97BF"><b>Nut Bank</b><br>(+<span id="nutBankDamage"> </span> nuts/sec)<br>- <span id="nutBankCost">1400000</span> nuts</button>
-					<button onclick="buy('nutEmpire')" class="buyNutEmpire" style="display:none;background-color: #1F3A93"><b>Nut Empire</b><br>(+<span id="nutEmpireDamage"> </span> nuts/sec)<br>- <span id="nutEmpireCost">20000000</span> nuts</button>
-					<button onclick="buy('nutWorldControl')" class="buyNutWorldControl" style="display:none;background-color: #9B59B6"><b>World Nut Control</b><br>(+<span id="nutWorldControlDamage"> </span> nuts/sec)<br>- <span id="nutWorldControlCost">330000000</span> nuts</button>
-					<button onclick="buy('nutGalacticReign')" class="buyNutGalacticReign" style="display:none;background-color: #F62459"><b>Galactic Nut Reign</b><br>(+<span id="nutGalacticReignDamage"> </span> nuts/sec)<br>- <span id="nutGalacticReignCost">5100000000</span> nuts</button>
-					<button onclick="buy('deezNutGuy')" class="buyDeezNutGuy" style="display:none;background-color: #F22613"><b>Deez Nut Guy</b><br>(+<span id="deezNutGuyDamage"> </span> nuts/sec)<br>- <span id="deezNutGuyCost">75000000000</span> nuts</button>
-					<button onclick="buy('nutTimeTravel')" class="buyNutTimeTravel" style="display:none;background-color: #96281B"><b>Time Travelling Nuts</b><br>(+<span id="nutTimeTravelDamage"> </span> nuts/sec)<br>- <span id="nutTimeTravelCost">1000000000000</span> nuts</button>
-					<button onclick="buy('nutUniversalDomination')" class="buyNutUniversalDomination" style="display:none;background-color: #72231a"><b>Universal Nut Domination</b><br>(+<span id="nutUniversalDominationDamage"> </span> nuts/sec)<br>- <span id="nutUniversalDominationCost">40000000000000</span> nuts</button>
-					<button onclick="buy('nutGod')" class="buyNutGod" style="display:none;background-color: #2d0e0b"><b>Nut God</b><br>(+<span id="nutGodDamage"> </span> nuts/sec)<br>- <span id="nutGodCost">170000000000000</span> nuts</button>
-					<button onclick="buy('nutAfterlife')" id="redglow" class="buyNutAfterlife" style="display:none;background-image:url('images/colours.gif');-webkit-backface-visibility: hidden;"><b>Nut Afterlife</b><br>(+<span id="nutAfterlifeDamage"> </span> nuts/sec)<br>- <span id="nutAfterlifeCost">2000000000000000</span> nuts</button>
+					<!--<button onclick="clickOnButton()" class="clickButton" id="middlemilk">click</button>-->
+					<button onclick="buy('milkKid')" class="buymilkKid" style="display:none;background-color: #EB9532"><b>milk Kid</b><br>(+<span id="milkKidDamage">0.1</span> milks/sec)<br>- <span id="milkKidCost">15</span> milks</button>
+					<button onclick="buy('milkBoy')" class="buymilkBoy" style="display:none;background-color: #F39C12"><b>milk Boy</b><br>(+<span id="milkBoyBonusTotal">1</span> milks/sec)<br>- <span id="milkBoyCost">50</span> milks</button>
+					<button onclick="buy('milkMan')" class="buymilkMan" style="display:none;background-color: #87D37C"><b>milk Man</b><br>(+<span id="milkManDamage"> </span> milks/sec)<br>- <span id="milkManCost">1000</span> milks</button>
+					<button onclick="buy('milkFarm')" class="buymilkFarm" style="display:none;background-color: #26A65B"><b>milk Farm</b><br>(+<span id="milkFarmDamage"> </span> milks/sec)<br>- <span id="milkFarmCost">13000</span> milks</button>
+					<button onclick="buy('milkFactory')" class="buymilkFactory" style="display:none;background-color: #03C9A9"><b>milk Factory</b><br>(+<span id="milkFactoryDamage"> </span> milks/sec)<br>- <span id="milkFactoryCost">150000</span> milks</button>
+					<button onclick="buy('milkBank')" class="buymilkBank" style="display:none;background-color: #5C97BF"><b>milk Bank</b><br>(+<span id="milkBankDamage"> </span> milks/sec)<br>- <span id="milkBankCost">1400000</span> milks</button>
+					<button onclick="buy('milkEmpire')" class="buymilkEmpire" style="display:none;background-color: #1F3A93"><b>milk Empire</b><br>(+<span id="milkEmpireDamage"> </span> milks/sec)<br>- <span id="milkEmpireCost">20000000</span> milks</button>
+					<button onclick="buy('milkWorldControl')" class="buymilkWorldControl" style="display:none;background-color: #9B59B6"><b>World milk Control</b><br>(+<span id="milkWorldControlDamage"> </span> milks/sec)<br>- <span id="milkWorldControlCost">330000000</span> milks</button>
+					<button onclick="buy('milkGalacticReign')" class="buymilkGalacticReign" style="display:none;background-color: #F62459"><b>Galactic milk Reign</b><br>(+<span id="milkGalacticReignDamage"> </span> milks/sec)<br>- <span id="milkGalacticReignCost">5100000000</span> milks</button>
+					<button onclick="buy('deezmilkGuy')" class="buyDeezmilkGuy" style="display:none;background-color: #F22613"><b>Deez milk Guy</b><br>(+<span id="deezmilkGuyDamage"> </span> milks/sec)<br>- <span id="deezmilkGuyCost">75000000000</span> milks</button>
+					<button onclick="buy('milkTimeTravel')" class="buymilkTimeTravel" style="display:none;background-color: #96281B"><b>Time Travelling milks</b><br>(+<span id="milkTimeTravelDamage"> </span> milks/sec)<br>- <span id="milkTimeTravelCost">1000000000000</span> milks</button>
+					<button onclick="buy('milkUniversalDomination')" class="buymilkUniversalDomination" style="display:none;background-color: #72231a"><b>Universal milk Domination</b><br>(+<span id="milkUniversalDominationDamage"> </span> milks/sec)<br>- <span id="milkUniversalDominationCost">40000000000000</span> milks</button>
+					<button onclick="buy('milkGod')" class="buymilkGod" style="display:none;background-color: #2d0e0b"><b>milk God</b><br>(+<span id="milkGodDamage"> </span> milks/sec)<br>- <span id="milkGodCost">170000000000000</span> milks</button>
+					<button onclick="buy('milkAfterlife')" id="redglow" class="buymilkAfterlife" style="display:none;background-image:url('images/colours.gif');-webkit-backface-visibility: hidden;"><b>milk Afterlife</b><br>(+<span id="milkAfterlifeDamage"> </span> milks/sec)<br>- <span id="milkAfterlifeCost">2000000000000000</span> milks</button>
 				</div>
 
 				<div id="bottomLeft">
@@ -147,8 +147,8 @@
 				</div>
 				<button onclick="ShowGambling()" id="gamblingButton" style="display:none;position:absolute;top:1.2vw;left:20vw;background-color:#D35400">gambling</button>
 				<div id="gambling">
-					<div style="font-size:2.5vw;font-weight:bold;position:relative;bottom:8px;text-align:center">nut gambling</div>
-					exact nuts: <span id="nutsGamble" style="pointer-events:auto">0</span>
+					<div style="font-size:2.5vw;font-weight:bold;position:relative;bottom:8px;text-align:center">milk gambling</div>
+					exact milks: <span id="milksGamble" style="pointer-events:auto">0</span>
 					<br>
 
 					<hr size="1" noshade color=black>
@@ -182,7 +182,7 @@
 					<br>
 
 					<hr size="1" noshade color=black>
-					scissors paper rock for 2.5x nuts
+					scissors paper rock for 2.5x milks
 					<br>
 					<button onclick="ScissorsPaperRock('scissors')" style="position:relative;top:-0.5vw;width:32.3%;background-color:#7f8c8d">scissors</button>
 					<button onclick="ScissorsPaperRock('paper')" style="position:relative;top:-0.5vw;width:32.3%;background-color:#95a5a6">paper</button>
@@ -194,16 +194,16 @@
 					<div style="font-size:2.5vw;font-weight:bold;position:relative;bottom:8px;text-align:center">prestige</div>
 					current level: <span id="prestigeLevel">0</span>
 					<br>
-					current total nuts/sec: <span id="prestigeDamage">0</span>
+					current total milks/sec: <span id="prestigeDamage">0</span>
 					<br>
-					prestige to gain a permanent <span id="prestigeGain">0</span>x nuts/sec increase
+					prestige to gain a permanent <span id="prestigeGain">0</span>x milks/sec increase
 					<br>
 
 					<button onclick="Prestige()">prestige</button>
 				</div>
 
 				<div id="prestigeGainDiv" style="display:none">
-					<span style="position:relative;top:3%"><span id="prestigeGainText"></span> x bonus nuts/sec from prestige</span>
+					<span style="position:relative;top:3%"><span id="prestigeGainText"></span> x bonus milks/sec from prestige</span>
 				</div>
 			</main>
 		</div>
